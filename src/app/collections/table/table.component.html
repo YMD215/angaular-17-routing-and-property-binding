@@ -1,0 +1,28 @@
+<table class="ui table" [ngClass]="classNames">
+    <thead>
+        <tr>
+            @for (header of headers; track header) {
+                <th>
+                    {{ header.label }}
+                </th>
+            }
+            @empty {
+                <th>
+                    nothing goes here
+                </th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for(obj of data; track obj){
+            <tr>
+                @for(header of headers; track header) {
+                    <td>
+                        {{ obj[header.key] }}
+                    </td>
+                }
+            </tr>
+  
+        }
+    </tbody>
+</table>
