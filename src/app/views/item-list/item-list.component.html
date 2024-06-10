@@ -1,0 +1,17 @@
+<div class="ui items">
+    @for (item of items; track $index) {
+        <div class="item">
+            <div class="image" id="content-image">
+                <img [src]="item.img">
+            </div>
+            <div class="content">
+                <div class="header">
+                    {{ item.title }}
+                </div>
+                <div class="description">
+                    <p> {{ item.description }} </p>
+                </div>
+            </div>
+        </div>
+    }
+</div>

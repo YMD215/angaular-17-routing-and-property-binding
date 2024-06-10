@@ -1,3 +1,6 @@
 .ui.icon.header:empty {
     margin: 0;
 }
+#segment{
+    min-height: 16rem;
+}

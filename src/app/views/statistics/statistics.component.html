@@ -1,0 +1,12 @@
+<div class="ui statistics">
+ @for (item of static; track $index) {
+     <div class="statistic">
+         <div class="value">
+             {{ item.value }}
+         </div>
+         <div class="label">
+             {{ item.text }}
+         </div>
+     </div>
+ }
+</div>

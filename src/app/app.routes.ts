@@ -8,6 +8,8 @@ import { CollectionsHomeComponent } from './collections/collections-home/collect
 import { BiographyComponent } from './collections/biography/biography.component';
 import { PartnersComponent } from './collections/partners/partners.component';
 import { CompaniesComponent } from './collections/companies/companies.component';
+import { Component } from '@angular/core';
+import { ModsHomeComponent } from './mods/mods-home/mods-home.component';
 
 export const routes: Routes = [
     {path: "", redirectTo: 'elements', pathMatch: 'full'},
@@ -21,7 +23,8 @@ export const routes: Routes = [
     {   
         path: "collections", loadComponent: () => import('./collections/collections.component').then((c) => c.CollectionsComponent), 
         children: [
-            {path: "", component: CollectionsHomeComponent,
+            {
+                path: "", component: CollectionsHomeComponent,
                 children: [
                     {path: "", component: BiographyComponent},
                     {path: "partners", component: PartnersComponent},
@@ -29,6 +32,13 @@ export const routes: Routes = [
                 ]
             },
         ],
+    },
+    {path: "Views", loadComponent: () => import('./views/views.component').then((v) => v.ViewsComponent)},
+    {
+        path: "modules", loadComponent: () => import('./mods/mods.component').then((m) => m.ModsComponent),
+        children: [
+            {path: '' , component: ModsHomeComponent},
+        ]
     },
     {path: "**", loadComponent: () => import('./not-found/not-found.component').then((n) => n.NotFoundComponent)}
 ];
